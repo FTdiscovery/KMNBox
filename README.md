@@ -17,4 +17,8 @@ Does either player have a winning strategy?
 
 For Q1 it can be proven that for a k x m x n grid, if either one of the dimensions is even then the game is a forced win for Player 2. The theory is that the game is a forced win for Player 2, but this has to be proven for a odd x odd x odd grid. The minimax code in this repository is an attempt to solve this problem.
 
+case 1: n is even. then the winning strategy for player 2 is to place a stone above the move player 1 makes. 
+case 2: n is odd, but at least one of k or m is even. then if player 1 plays on a blank slot, player 2 places its stone on the slot rotated 180 degrees with respect to the center of the board. if player 1 does not play on a blank slot, then player 2 places a stone above the move player 1 makes.
+case 3: k, m, n are all odd. then tbc
+
 For Q2 haven't started lol
