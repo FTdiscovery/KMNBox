@@ -100,7 +100,7 @@ class KNBoard:
             return node.gameWonBy()/node.plies  # more plies = worse win
 
         minValue = 1
-        for move in node.availableMoves():
+        for move in reversed(node.availableMoves()):
             node.makeMove(move[0], move[1])
             moveValue = self.maxValue(node, depth - 1, alpha, beta)
             node.setToZero(move[0], move[1])
@@ -127,7 +127,7 @@ class KNBoard:
 def bestMovePlayer1(board, depth):
     moves = board.availableMoves()
     scores = []
-    for move in board.availableMoves():
+    for move in moves:
         board.makeMove(move[0], move[1])
         moveValue = board.alphabeta(board, depth - 1)
         board.setToZero(move[0], move[1])
@@ -139,9 +139,9 @@ def bestMovePlayer1(board, depth):
 
 
 def bestMovePlayer2(board, depth):
-    moves = board.availableMoves()
+    moves = board.availableMoves()[::-1]
     scores = []
-    for move in board.availableMoves():
+    for move in moves:
         board.makeMove(move[0], move[1])
         moveValue = board.alphabeta(board, depth - 1)
         board.setToZero(move[0], move[1])
@@ -172,7 +172,11 @@ if humanPlayer:
 
         state.printBoard()
         state.gameOver()
-        print(state.gameWonBy())
+        win = state.gameWonBy()
+        if win == 1:
+            print("Player 1 wins.")
+        elif win == -1:
+            print("Player 2 wins.")
 else:
     #computer vs computer
     start = time.time()
@@ -190,7 +194,11 @@ else:
 
         state.printBoard()
         state.gameOver()
-        print(state.gameWonBy())
+        win = state.gameWonBy()
+        if win == 1:
+            print("Player 1 wins.")
+        elif win == -1:
+            print("Player 2 wins.")
     end = time.time()
     print("Time elasped:", end-start)
 
