@@ -1,5 +1,6 @@
 # KMNBox
 Silly math problems in a box
+proposed by adam bertelli gordon chi and victor luo
 
 
 1. Player 1 and Player 2 take alternating turns placing white and black stones on a k x m x n grid, k,m,n >= 2. On each turn, a player drops a stone on one of the k x m available slots, such that the stone falls to the very bottom (i.e in Connect4). The game continues until two stones of the same color are placed horizontally or vertically adjacent to each other. The first person who cannot place a stone or places two stones of the same colour adjacent to each other loses the game.
