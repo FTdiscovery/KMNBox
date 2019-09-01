@@ -21,4 +21,4 @@ For Q1 it can be proven that for a k x m x n grid, if either one of the dimensio
 <b>case 2</b>: n is odd, but at least one of k or m is even. then if player 1 plays on a blank slot, player 2 places its stone on the slot rotated 180 degrees around the center of the kxm board. if player 1 does not play on a blank slot, then player 2 places a stone above the move player 1 makes.<br>
 <b>case 3</b>: k, m, n are all odd. then tbc
 
-For Q2 reflection works if >= dimension of the grid is even.
+For Q2 reflection works if >=1 dimension of the grid is even.
